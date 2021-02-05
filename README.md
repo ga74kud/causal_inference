@@ -7,25 +7,23 @@
 
 # Installation
 ```bash
-pip install causal_inference
+pip install causal-inference
 ```
 
 # Usage
 
 ```python
+# TBD
 ```
 
 
-... should produce:
-
-![](/images/grid_mdp.png)
 
 
 # Citation
 
 Please cite following document if you use this python package:
 ```
-TODO
+TBD
 ```
 
 
