@@ -32,5 +32,6 @@ setup(name='causal_inference',
           "pycairo",
           "plotly",
           "pandas",
+          "sympy",
         ],
       zip_safe=False)

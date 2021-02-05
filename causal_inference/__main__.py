@@ -6,9 +6,9 @@
 # Released under GNU GENERAL PUBLIC LICENSE
 # email michael.hartmann@v2c2.at
 # -------------------------------------------------------------
-
+from causal_inference.src.uc_scm.uc_scm_main import *
 import argparse
-
+from sympy.stats import *
 from __init__ import *
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -23,7 +23,17 @@ if __name__ == '__main__':
     ########################
     ### Causal Inference ###
     ########################
-    None
+    obj = service_scmMDP()
+    obj.show_graph()
+
+    t = obj.problem.obj_solver.get_scm_function(obj.problem.obj_solver.data,
+                                                [Normal('x', 1.295, 0.273), Normal('v', 1.295, 0.273),
+                                                 Normal('v', 1.295, 0.273)])
+    print(t)
+    t = obj.problem.obj_solver.get_scm_function(obj.problem.obj_solver.data,
+                                                [3, 4,
+                                                 Normal('v', 1.295, 0.273)])
+    print(t)
 
 
 
