@@ -1,29 +1,14 @@
-from causal_inference.src.uc_scm.problem import *
-from sympy.stats import *
+from causal_inference.src.uc_scm.scm import *
 
-class service_scmMDP(object):
-    def __init__(self, folder_to_store="."):
-        self.problem=self.new_problem(folder_to_store)
+class service_scm(object):
+    def __init__(self):
+        None
+    def test(self):
+        obj=scm_class()
+        problem = {'initial_state': [0, 1, 1.295], 'variables': {'000': 'x', '001': 'v', '002': 'a', '003': 'F'},
+                   'scm': {'000': 'x+T*v', '001': 'v+T*a', '002': 'a+T*F', '003': 'F'}, 'parameters': {'000': 'T'}}
+        topology=obj.get_topology_by_scm(problem)
+        all_exp, all_var=obj.get_scm_function(problem, [1, 2, 3, 4])
+        None
 
-    def new_problem(self, folder_to_store):
-        obj = problem()
-        obj.set_manifold()
-        obj.set_solver()
-        return obj
 
-    def set_problem(self, problem):
-        self.problem=problem
-
-    def show_graph(self):
-        self.problem.obj_solver.visualize_network()
-
-if __name__ == '__main__':
-    obj=service_scmMDP()
-    obj.show_graph()
-
-    t = obj.problem.obj_solver.get_scm_function(obj.problem.obj_solver.data, [Normal('x', 1.295, 0.273), Normal('v', 1.295, 0.273), Normal('v', 1.295, 0.273)])
-    print(t)
-    t = obj.problem.obj_solver.get_scm_function(obj.problem.obj_solver.data,
-                                                [3, 4,
-                                                 Normal('v', 1.295, 0.273)])
-    print(t)
