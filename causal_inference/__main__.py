@@ -24,7 +24,12 @@ if __name__ == '__main__':
     ### Causal Inference ###
     ########################
     obj = service_scm()
-    obj.test()
+    problem = {'variables': {'000': 'V', '001': 'F'},
+               'scm': {'000': 'V', '001': '2*V+F'}}
+    input=[[1, .1], [2, 0.1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ]
+    all_exp, all_var = get_solution(problem, input)
+    print(all_exp)
+    print(all_var)
 
 
 
