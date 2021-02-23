@@ -9,7 +9,10 @@
 
 from causal_inference.src.uc_scm.scm import *
 
-def get_solution(problem, input):
+''' 
+Get the solution for the Structural Causal Model (SCM)
+'''
+def get_scm_solution(problem, input):
     obj = scm_class()
     # topology=obj.get_topology_by_scm(problem)
     all_exp, all_var = obj.get_scm_function(problem, input)

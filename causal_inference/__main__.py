@@ -6,7 +6,6 @@
 # Released under GNU GENERAL PUBLIC LICENSE
 # email michael.hartmann@v2c2.at
 # -------------------------------------------------------------
-from causal_inference.src.uc_scm.uc_scm_main import *
 import argparse
 from sympy.stats import *
 from __init__ import *
@@ -23,11 +22,10 @@ if __name__ == '__main__':
     ########################
     ### Causal Inference ###
     ########################
-    obj = service_scm()
     problem = {'variables': {'000': 'V', '001': 'F'},
                'scm': {'000': 'V', '001': '2*V+F'}}
-    input=[[1, .1], [2, 0.1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ]
-    all_exp, all_var = get_solution(problem, input)
+    input=[[1, .1], [2, 0.1]]
+    all_exp, all_var = get_scm_solution(problem, input)
     print(all_exp)
     print(all_var)
 

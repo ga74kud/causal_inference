@@ -1,3 +1,4 @@
+from sklearn.decomposition import PCA
 import md_pro as md
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,6 +9,12 @@ def plot_nodes(P, **kwargs):
     ax.scatter(all_points[:, 0], all_points[:, 1], c=kwargs["U"])
     for i, txt in enumerate(P):
         ax.annotate(txt, (all_points[i, 0], all_points[i, 1]))
+
+def get_X_matrix(P, **kwargs):
+    all_points = np.array([P[p] for p in P])
+    X=np.hstack((all_points, kwargs["U"]))
+    return X
+
 
 mygrid={"x_grid": 5, "y_grid": 4}
 amount_nodes=np.int(mygrid["x_grid"]*mygrid["y_grid"])
@@ -26,4 +33,6 @@ dict_mdp=md.start_mdp(mdp_challenge)
 # plot the nodes
 plot_nodes(P, **{'U': dict_mdp['U']})
 plt.show()
-None
+pca = PCA(n_components=3)
+X=get_X_matrix(P, **{'U': dict_mdp['U']})
+pca.fit(X)

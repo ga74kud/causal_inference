@@ -13,7 +13,11 @@ pip install causal-inference
 # Usage
 
 ```python
-# TBD
+import causal_inference as ci
+problem = {'variables': {'000': 'V', '001': 'F'},
+               'scm': {'000': 'V', '001': '2*V+F'}}
+input=[[1, .1], [2, 0.1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ]
+all_exp, all_var = ci.get_scm_solution(problem, input)
 ```
 
 
