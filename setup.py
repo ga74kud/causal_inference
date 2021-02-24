@@ -14,7 +14,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='causal_inference',
-      version='0.0.3',
+      version='0.0.4',
       description='Causal Inference',
       long_description=long_description,
       long_description_content_type="text/markdown",
