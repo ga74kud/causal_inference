@@ -1,8 +1,9 @@
 import causal_inference as ci
 import numpy as np
-probs={'A': [1, 0.1], 'B': [1, 0.1], 'C': [1, 0.1], 'D': [1, 0.1]}
-xy={"mean": np.array([[1, 2], [2, 4]]), "dev": np.array([[.1, .2], [.2, .4]])}
+probs={'a': 2, 'b': 4, 'c': 3, 'd': 1}
+X={"mean": 0, "dev": 1}
+Y={"mean": 0, "dev": 1}
+XY=[X, Y]
+X, Y, VX, VY=ci.next_position_scm(XY, probs)
 
-new_xv=ci.next_position_scm(xy, probs)
-print(new_xv["mean"])
-print(new_xv["dev"])
+print(X, Y, VX, VY)

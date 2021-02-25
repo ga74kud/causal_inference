@@ -11,7 +11,7 @@ def plot_nodes(P, **kwargs):
         ax.annotate(txt, (all_points[i, 0], all_points[i, 1]))
 
 
-mygrid={"x_grid": 5, "y_grid": 4}
+mygrid={"x_grid": 5, "y_grid": 4, "x_min": -10, "x_max": 10, "y_min": -10, "y_max": 10}
 amount_nodes=np.int(mygrid["x_grid"]*mygrid["y_grid"])
 
 #start point
