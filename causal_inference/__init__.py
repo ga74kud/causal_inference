@@ -21,6 +21,6 @@ def get_scm_solution(problem, input):
 def next_position_scm(XY, probs):
     X = XY[0]
     Y = XY[1]
-    VX = {"mean": probs['A']*X['mean'] + probs['B']*Y['mean'], "dev": (probs['A']*X['dev'])**2 + (probs['B']*Y['dev'])**2}
-    VY = {"mean": probs['C']*X['mean'] + probs['D']*Y['mean'], "dev": (probs['C']*X['dev'])**2 + (probs['D']*Y['dev'])**2}
+    VX = {"mean": probs['a']*X['mean'] + probs['b']*Y['mean'], "dev": (probs['a']**2)*(X['dev']**2) + (probs['b']**2)*(Y['dev']**2)}
+    VY = {"mean": probs['c']*X['mean'] + probs['d']*Y['mean'], "dev": probs['c']**2*X['dev']**2 + probs['d']**2*Y['dev']**2}
     return X, Y, VX, VY

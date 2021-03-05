@@ -11,19 +11,12 @@ from sympy.stats import *
 from __init__ import *
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    ##################
-    ### Parameters ###
-    ##################
-    parser = argparse.ArgumentParser()
-    # parser.add_argument('--sample_time', '-Ts', type=float, help='Ts=0.1',
-    #                     default='0.1', required=False)
-    args = parser.parse_args()
-    params = vars(args)
+
     ########################
     ### Causal Inference ###
     ########################
-    problem = {'variables': {'000': 'V', '001': 'F'},
-               'scm': {'000': 'V', '001': '2*V+F'}}
+    problem = {'variables': {'000': 'x', '001': 'y'},
+               'scm': {'000': 'a*x+b*y', '001': 'c*x+d*y'}}
     input=[[1, .1], [2, 0.1]]
     all_exp, all_var = get_scm_solution(problem, input)
     print(all_exp)
