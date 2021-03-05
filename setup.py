@@ -33,5 +33,7 @@ setup(name='causal_inference',
           "plotly",
           "pandas",
           "sympy",
+          "scikit-learn",
+          "md_pro"
         ],
       zip_safe=False)
